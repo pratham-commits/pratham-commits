@@ -16,7 +16,7 @@
 
 - 🚀 **Artificial Intelligence / Machine Learning**
   - Building GenAI-powered apps with LangChain, LLaMA, BERT, MiniLM
-  - Projects like *SQL Chatbots*, *AI Research Assistants*, and *Author Impact Analysis*
+  - Projects like *SQL Chatbots* and *AI Research Assistants*
   - Love everything NLP, from text classification to abstractive summarization
 
 - 🌐 **Full Stack Development (MERN)**
@@ -45,11 +45,6 @@
 - 📚 [AI Research Assistant](https://github.com/pratham-commits/ai-research-assistant)  
   _Analyze, classify, summarize, and explore arXiv papers with LLMs_  
   `RAG Pipeline + FAISS + LangChain + LLaMA + Streamlit`
-
-- 🧾 [ResumeGenie](https://github.com/pratham-commits/resumegenie)  
-  _Auto-generate professional resumes using AI_  
-  `React + Flask + GPT + PDF Parsing`
-
 ---
 
 ## 📊 GitHub Stats
