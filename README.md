@@ -1,5 +1,7 @@
 
-<h1 align="center">👋 Hey there, I'm Pratham Shah</h1>
+<h1 align="center" style="color:#e0e0e0;background:#121212;border-radius:20px;padding:20px;box-shadow:inset 6px 6px 12px #0a0a0a,inset -6px -6px 12px #1a1a1a;">
+  👋 Hey there, I'm Pratham Shah
+</h1>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/pratham-shah-89880a254/?originalSubdomain=in">
@@ -8,6 +10,10 @@
   <a href="https://github.com/pratham-commits">
     <img src="https://img.shields.io/badge/GitHub-pratham--commits-black?logo=github&style=for-the-badge" />
   </a>
+</p>
+
+<p align="center">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=pratham-commits" alt="visitor badge"/>
 </p>
 
 ---
@@ -51,7 +57,7 @@
 - 📚 [AI Research Assistant](https://github.com/pratham-commits/ai-research-assistant)  
   _Analyze, classify, summarize, and explore arXiv papers with LLMs_  
   `RAG Pipeline + FAISS + LangChain + LLaMA + Streamlit`
-
+  
 - 📚 [Reflect Reads – MERN App](https://github.com/pratham-commits/reflect-reads)  
   _A full-stack book order & browsing app using MongoDB, Express, React, and Node.js._  
   `Tailwind + Vite + JWT + REST API`
@@ -60,7 +66,7 @@
 
 ## 📊 GitHub Stats
 
-<p align="center">
+<p align="center" style="background:#121212;padding:10px;border-radius:15px;">
   <img src="https://github-readme-stats.vercel.app/api?username=pratham-commits&show_icons=true&theme=radical" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pratham-commits&layout=compact&theme=radical" />
 </p>
