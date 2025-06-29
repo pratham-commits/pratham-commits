@@ -7,7 +7,6 @@
 ---
 
 🎯 **AI/ML Enthusiast | GenAI Developer | MERN Stack Practitioner**  
-🔭 Currently building: Intelligent AI Agents, SQL Chat Interfaces, and Research Assistant Tools  
 💡 Passionate about turning ideas into usable, intelligent tools.
 
 ---
@@ -21,6 +20,7 @@
 
 - 🌐 **Full Stack Development (MERN)**
   - Building end-to-end apps with MongoDB, Express.js, React, and Node.js
+  - Projects like *Reflect Reads*
   - Skilled in API design, frontend UI, backend services & integration
 
 ---
@@ -45,6 +45,10 @@
 - 📚 [AI Research Assistant](https://github.com/pratham-commits/ai-research-assistant)  
   _Analyze, classify, summarize, and explore arXiv papers with LLMs_  
   `RAG Pipeline + FAISS + LangChain + LLaMA + Streamlit`
+  
+- 📚 [Reflect Reads – MERN App](https://github.com/pratham-commits/reflect-reads)  
+  _A full-stack book order & browsing app using MongoDB, Express, React, and Node.js._  
+  `Tailwind + Vite + JWT + REST API`
 ---
 
 ## 📊 GitHub Stats
@@ -60,6 +64,3 @@
 - 💻 GitHub: [github.com/pratham-commits](https://github.com/pratham-commits)
 
 ---
-
-_This README is your first impression. Make it count._  
-Let the code (and creativity) speak. ✨
