@@ -26,6 +26,7 @@
 ## 🧠 What I Do
 
 - 🚀 **Artificial Intelligence / Machine Learning**
+  - Implementing papers from scratch like 'Attention is all you need' , 'Less is More: Recursive Reasoning with Tiny Networks'
   - Building GenAI-powered apps with LangChain, LLaMA, BERT, MiniLM
   - Projects like _SQL Chatbots_ and _AI Research Assistants_
   - Love everything NLP, from text classification to abstractive summarization
