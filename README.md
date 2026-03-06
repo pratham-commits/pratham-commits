@@ -241,7 +241,7 @@ fun_fact: "I implement papers from scratch for fun! 📚"
 
 <br/><br/>
 
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=pratham-commits&theme=github_dark" />
+<!-- <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=pratham-commits&theme=github_dark" /> -->
 
 <br/><br/>
 
