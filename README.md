@@ -1,11 +1,11 @@
 <div align="center">
   
 <!-- Animated Header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Pratham%20Shah&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=32&desc=AI/ML%20Enthusiast%20%7C%20GenAI%20Developer%20%7C%20MERN%20Stack%20Practitioner&descAlignY=52&descSize=18"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1a1a,50:4a4a4a,100:ffffff&height=180&section=header&text=Pratham%20Shah&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=32&desc=AI/ML%20Enthusiast%20%7C%20GenAI%20Developer%20%7C%20MERN%20Stack%20Practitioner&descAlignY=52&descSize=18"/>
 
 <!-- Typing Animation -->
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=600&height=100&lines=%F0%9F%92%A1+Turning+ideas+into+intelligent+tools;%F0%9F%9A%80+Building+the+future+with+AI+%26+Code" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=9CA3AF&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=600&height=100&lines=%F0%9F%92%A1+Turning+ideas+into+intelligent+tools;%F0%9F%9A%80+Building+the+future+with+AI+%26+Code" alt="Typing SVG" />
 </a>
 
 <!-- Social Badges with Glow Effect -->
@@ -18,12 +18,12 @@
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=181717" />
 </a>
 &nbsp;
-<img src="https://komarev.com/ghpvc/?username=pratham-commits&style=for-the-badge&color=6366f1&label=Profile+Views" alt="Profile Views"/>
+<img src="https://komarev.com/ghpvc/?username=pratham-commits&style=for-the-badge&color=555555&label=Profile+Views" alt="Profile Views"/>
 
 </div>
 
 <!-- Animated Divider -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<img width="100%" src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 <!-- About Section -->
 <h2>
@@ -55,7 +55,7 @@ fun_fact: "I implement papers from scratch for fun! 📚"
 <br clear="right"/>
 
 <!-- Divider -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<img width="100%" src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 <!-- What I Do Section -->
 <h2>
@@ -69,7 +69,7 @@ fun_fact: "I implement papers from scratch for fun! 📚"
 
 ### 🧠 AI / Machine Learning
 
-<img src="https://img.shields.io/badge/Focus-Artificial%20Intelligence-6366F1?style=flat-square"/>
+<img src="https://img.shields.io/badge/Focus-Artificial%20Intelligence-555555?style=flat-square"/>
 
 - 📄 Implementing papers from scratch:
   - *'Attention is All You Need'*
@@ -98,7 +98,7 @@ fun_fact: "I implement papers from scratch for fun! 📚"
 </table>
 
 <!-- Divider -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<img width="100%" src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 <!-- Tech Stack Section -->
 <h2>
@@ -148,7 +148,7 @@ fun_fact: "I implement papers from scratch for fun! 📚"
 </div>
 
 <!-- Divider -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<img width="100%" src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 <!-- Featured Projects -->
 <h2>
@@ -163,7 +163,7 @@ fun_fact: "I implement papers from scratch for fun! 📚"
 <h3 align="center">🧠 SQLAgent</h3>
 <div align="center">
   <a href="https://github.com/pratham-commits/SQLAgent" target="_blank">
-    <img src="https://img.shields.io/badge/View_Repository-6366F1?style=for-the-badge&logo=github&logoColor=white"/>
+    <img src="https://img.shields.io/badge/View_Repository-555555?style=for-the-badge&logo=github&logoColor=white"/>
   </a>
 </div>
 <br>
@@ -181,7 +181,7 @@ fun_fact: "I implement papers from scratch for fun! 📚"
 <h3 align="center">📚 AI Research Assistant</h3>
 <div align="center">
   <a href="https://github.com/pratham-commits/ai-research-assistant" target="_blank">
-    <img src="https://img.shields.io/badge/View_Repository-10B981?style=for-the-badge&logo=github&logoColor=white"/>
+    <img src="https://img.shields.io/badge/View_Repository-6b7280?style=for-the-badge&logo=github&logoColor=white"/>
   </a>
 </div>
 <br>
@@ -189,7 +189,7 @@ fun_fact: "I implement papers from scratch for fun! 📚"
   <em>Analyze, classify, summarize & explore arXiv papers with LLMs</em>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/RAG_Pipeline-6366F1?style=flat-square"/>
+  <img src="https://img.shields.io/badge/RAG_Pipeline-555555?style=flat-square"/>
   <img src="https://img.shields.io/badge/FAISS-00599C?style=flat-square"/>
   <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white"/>
   <img src="https://img.shields.io/badge/LLaMA-0467DF?style=flat-square"/>
@@ -201,7 +201,7 @@ fun_fact: "I implement papers from scratch for fun! 📚"
 <h3 align="center">📚 Reflect Reads – MERN App</h3>
 <div align="center">
   <a href="https://github.com/pratham-commits/reflect-reads" target="_blank">
-    <img src="https://img.shields.io/badge/View_Repository-F59E0B?style=for-the-badge&logo=github&logoColor=white"/>
+    <img src="https://img.shields.io/badge/View_Repository-9ca3af?style=for-the-badge&logo=github&logoColor=white"/>
   </a>
 </div>
 <br>
@@ -220,7 +220,7 @@ fun_fact: "I implement papers from scratch for fun! 📚"
 </div>
 
 <!-- Divider -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<img width="100%" src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 <!-- GitHub Stats -->
 <h2>
@@ -231,26 +231,26 @@ fun_fact: "I implement papers from scratch for fun! 📚"
 <div align="center">
   
 <a href="https://github.com/pratham-commits">
-  <img height="180em" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=pratham-commits&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=6366F1&icon_color=6366F1&text_color=FFFFFF"/>
-  <img height="180em" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=pratham-commits&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF"/>
+  <img height="180em" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=pratham-commits&show_icons=true&theme=dark&hide_border=true&bg_color=1a1a1a&title_color=ffffff&icon_color=9ca3af&text_color=d1d5db"/>
+  <img height="180em" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=pratham-commits&layout=compact&theme=dark&hide_border=true&bg_color=1a1a1a&title_color=ffffff&text_color=d1d5db"/>
 </a>
 
 <br/><br/>
 
-<img src="https://streak-stats.demolab.com?user=pratham-commits&theme=tokyonight&hide_border=true&background=0D1117&stroke=6366F1&ring=6366F1&fire=F59E0B&currStreakLabel=FFFFFF" />
+<img src="https://streak-stats.demolab.com?user=pratham-commits&theme=dark&hide_border=true&background=1a1a1a&stroke=4a4a4a&ring=9ca3af&fire=ffffff&currStreakLabel=d1d5db" />
 
 <br/><br/>
 
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=pratham-commits&theme=tokyonight" />
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=pratham-commits&theme=github_dark" />
 
 <br/><br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=pratham-commits&custom_title=Contribution%20Graph&bg_color=0D1117&color=6366F1&line=6366F1&point=FFFFFF&area_color=6366F1&title_color=FFFFFF&area=true&hide_border=true" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=pratham-commits&custom_title=Contribution%20Graph&bg_color=1a1a1a&color=9ca3af&line=9ca3af&point=FFFFFF&area_color=4a4a4a&title_color=FFFFFF&area=true&hide_border=true" />
 
 </div>
 
 <!-- Divider -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<img width="100%" src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 <!-- Connect Section -->
 <h2>
@@ -271,15 +271,9 @@ fun_fact: "I implement papers from scratch for fun! 📚"
 <br/><br/>
 
 ```
-💬 "The best way to predict the future is to create it." - Peter Drucker
+Author: Ned Stack
+Message: Fix bug before the Night King reaches production.
 ```
 
 </div>
 
-<!-- Footer -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer"/>
-
-<div align="center">
-  <img src="https://forthebadge.com/images/badges/built-with-love.svg" />
-  <img src="https://forthebadge.com/images/badges/powered-by-coffee.svg" />
-</div>
