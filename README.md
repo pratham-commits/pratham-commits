@@ -243,7 +243,6 @@ fun_fact: "I implement papers from scratch for fun! 📚"
 
 <!-- <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=pratham-commits&theme=github_dark" /> -->
 
-<br/><br/>
 
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=pratham-commits&custom_title=Contribution%20Graph&bg_color=1a1a1a&color=9ca3af&line=9ca3af&point=FFFFFF&area_color=4a4a4a&title_color=FFFFFF&area=true&hide_border=true" />
 
