@@ -269,10 +269,12 @@ fun_fact: "I implement papers from scratch for fun! 📚"
 
 <br/><br/>
 
-```
-Author: Ned Stack
-Message: Fix bug before the Night King reaches production.
-```
+<div align="center">
+
+<pre>
+⚔️ Author: Ned Stack
+💬 Message: Fix bug before the Night King reaches production.
+</pre>
 
 </div>
 
