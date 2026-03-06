@@ -272,7 +272,7 @@ fun_fact: "I implement papers from scratch for fun! 📚"
 <div align="center">
 
 <pre>
-💬 Message: Fix bug before the Night King reaches production.
+Message: Fix bug before the Night King reaches production.
 </pre>
 
 </div>
