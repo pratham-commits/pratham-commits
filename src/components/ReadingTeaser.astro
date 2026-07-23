@@ -1,0 +1,21 @@
+---
+import SectionCollapse from './SectionCollapse.astro';
+
+interface Props {
+  title: string;
+  blurb: string;
+}
+
+const { title, blurb } = Astro.props;
+---
+
+<section class="section reading-teaser">
+  <SectionCollapse index="07" title={title} id="exploring">
+    <div class="reading-teaser-inner">
+      <p class="reading-teaser-blurb">{blurb}</p>
+      <a class="reading-teaser-link mono" href="/exploring">
+        Open exploring →
+      </a>
+    </div>
+  </SectionCollapse>
+</section>

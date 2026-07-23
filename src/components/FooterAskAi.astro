@@ -1,0 +1,28 @@
+---
+import AskAiLink from './AskAiLink.astro';
+import AiProviderIcon from './AiProviderIcon.astro';
+import { aiProviders, providerChatUrl } from '../lib/ai-eval';
+
+interface Props {
+  siteUrl: string;
+}
+
+const { siteUrl } = Astro.props;
+---
+
+<div class="footer-ask-ai">
+  <span class="footer-ask-ai-label mono">Ask AI</span>
+  <div class="footer-ask-ai-links">
+    {
+      aiProviders.map((provider) => (
+        <AskAiLink
+          id={provider.id}
+          label={provider.label}
+          href={providerChatUrl(provider, siteUrl)}
+        >
+          <AiProviderIcon id={provider.id} />
+        </AskAiLink>
+      ))
+    }
+  </div>
+</div>

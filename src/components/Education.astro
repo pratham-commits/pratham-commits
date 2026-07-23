@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets';
+import SectionCollapse from './SectionCollapse.astro';
+import type { EducationEntry } from '../data/site';
+import pdeuLogo from '../assets/pdeu-logo.png';
+import bitsLogo from '../assets/bits-pilani-logo.png';
+
+interface Props {
+  entries: EducationEntry[];
+}
+
+const { entries } = Astro.props;
+
+const logos = {
+  pdeu: pdeuLogo,
+  bits: bitsLogo,
+} as const;
+---
+
+<section class="section">
+  <SectionCollapse index="04" title="Education" id="education">
+    <div class="education-list">
+      {
+        entries.map((entry) => (
+          <article class="education-card">
+            <header class="education-head">
+              <div class="education-brand">
+                {
+                  entry.logo ? (
+                    <Image
+                      src={logos[entry.logo]}
+                      alt=""
+                      class="education-logo"
+                      width={52}
+                      height={52}
+                      densities={[1, 2]}
+                    />
+                  ) : null
+                }
+                <div class="education-titles">
+                  <h2 class="education-school">{entry.school}</h2>
+                  <p class="education-degree mono">{entry.degree}</p>
+                </div>
+              </div>
+              <div class="education-meta-col mono">
+                {entry.status === 'upcoming' ? (
+                  <span class="education-status education-status-upcoming">Upcoming</span>
+                ) : null}
+                <p class="education-dates">{entry.dates}</p>
+                {entry.meta ? <p class="education-meta">{entry.meta}</p> : null}
+              </div>
+            </header>
+            {entry.note ? <p class="education-note">{entry.note}</p> : null}
+            {
+              entry.subjects && entry.subjects.length > 0 ? (
+                <div class="education-subjects">
+                  <p class="education-subjects-label mono">Selected coursework</p>
+                  <ul class="education-subject-list mono">
+                    {entry.subjects.map((subject) => (
+                      <li>{subject}</li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null
+            }
+          </article>
+        ))
+      }
+    </div>
+  </SectionCollapse>
+</section>

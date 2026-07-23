@@ -1,0 +1,32 @@
+---
+import openai from '../assets/ai-icons/openai.svg?raw';
+import claude from '../assets/ai-icons/claude.svg?raw';
+import gemini from '../assets/ai-icons/gemini.svg?raw';
+import perplexity from '../assets/ai-icons/perplexity.svg?raw';
+import copilot from '../assets/ai-icons/copilot.svg?raw';
+import mistral from '../assets/ai-icons/mistral.svg?raw';
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+
+const icons: Record<string, string> = {
+  chatgpt: openai,
+  claude,
+  gemini,
+  perplexity,
+  copilot,
+  mistral,
+};
+
+const svg = icons[id] ?? '';
+
+/** Strip embedded title; link aria-label names the provider. */
+const markup = svg
+  .replace(/<title>[\s\S]*?<\/title>/i, '')
+  .replace('<svg', '<svg class="ask-ai-icon"');
+---
+
+{markup ? <Fragment set:html={markup} /> : null}

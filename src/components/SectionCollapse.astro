@@ -1,0 +1,20 @@
+---
+interface Props {
+  index: string;
+  title: string;
+  id: string;
+  open?: boolean;
+}
+
+const { index, title, id, open = true } = Astro.props;
+---
+
+<details class="section-collapse" id={id} open={open}>
+  <summary class="section-collapse-summary mono">
+    <span class="section-collapse-label">({index}) {title}</span>
+    <span class="section-collapse-toggle" aria-hidden="true"></span>
+  </summary>
+  <div class="section-collapse-panel">
+    <slot />
+  </div>
+</details>

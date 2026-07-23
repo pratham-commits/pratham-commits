@@ -1,0 +1,55 @@
+---
+import WorkspaceHero from './WorkspaceHero.astro';
+import IconLinks from './IconLinks.astro';
+import type { SocialLink } from '../data/site';
+
+interface Props {
+  name: string;
+  subline: string;
+  tagline: string;
+  heroKicker: string;
+  contact: SocialLink[];
+  elsewhere: SocialLink[];
+}
+
+const { name, subline, tagline, heroKicker, contact, elsewhere } = Astro.props;
+---
+
+<header class="hero" id="top">
+  <div class="hero-main">
+    <div class="hero-copy">
+      <div class="hero-status mono" role="status">
+        <span class="hero-status-line hero-status-kicker">{heroKicker}</span>
+      </div>
+
+      <h1 class="hero-title" set:html={name.split(' ').join('<br />')} />
+      <p class="hero-subline mono">{subline}</p>
+      <p class="hero-tagline">{tagline}</p>
+    </div>
+
+    <div class="hero-social">
+      <IconLinks
+        index="-"
+        title="Contact"
+        links={contact}
+        id="hero-contact"
+        showTag={false}
+        compact
+      />
+      <IconLinks
+        index="-"
+        title="Elsewhere"
+        links={elsewhere}
+        id="hero-elsewhere"
+        showTag={false}
+        compact
+      />
+    </div>
+
+    <div class="hero-visual">
+      <WorkspaceHero />
+    </div>
+  </div>
+
+  <span class="hero-hint mono" aria-hidden="true">Scroll ↓</span>
+</header>

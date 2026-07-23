@@ -1,0 +1,51 @@
+---
+import SectionCollapse from './SectionCollapse.astro';
+import type { Project } from '../data/site';
+
+interface Props {
+  projects: Project[];
+}
+
+const { projects } = Astro.props;
+---
+
+<section class="section">
+  <SectionCollapse index="03" title="Selected Work" id="work">
+    <ul class="project-list">
+      {
+        projects.map((p) => (
+          <li class="project-entry">
+            <div class="project-row">
+              <span class="mono project-id">{p.id}</span>
+              <h3 class="project-title">{p.title}</h3>
+              <span class="project-meta mono">{p.meta}</span>
+              <div class="project-actions mono">
+                {
+                  p.demo ? (
+                    <a
+                      class="project-action"
+                      href={p.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Live ↗
+                    </a>
+                  ) : null
+                }
+                <a
+                  class="project-action"
+                  href={p.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Code ↗
+                </a>
+              </div>
+            </div>
+            <p class="project-desc">{p.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </SectionCollapse>
+</section>

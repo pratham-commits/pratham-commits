@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+import SectionCollapse from './SectionCollapse.astro';
+import type { ExperienceEntry } from '../data/site';
+import blinkLogo from '../assets/blink-analytics-logo.png';
+
+interface Props {
+  entries: ExperienceEntry[];
+}
+
+const { entries } = Astro.props;
+---
+
+<section class="section">
+  <SectionCollapse index="02" title="Experience" id="experience">
+    <div class="experience-list">
+      {
+        entries.map((entry) => (
+          <article class="experience-card">
+            <header class="experience-head">
+              <div class="experience-brand">
+                {entry.company === 'Blink Analytics' && (
+                  <Image
+                    src={blinkLogo}
+                    alt=""
+                    class="experience-logo"
+                    width={52}
+                    height={52}
+                    densities={[1, 2]}
+                  />
+                )}
+                <div class="experience-titles">
+                  <h2 class="experience-company">{entry.company}</h2>
+                  <p class="experience-role mono">{entry.role}</p>
+                </div>
+              </div>
+              <p class="experience-dates mono">{entry.dates}</p>
+            </header>
+            <ul class="experience-highlights">
+              {entry.highlights.map((line) => (
+                <li>{line}</li>
+              ))}
+            </ul>
+            <p class="experience-impact mono">
+              <span class="experience-impact-label">Impact</span>
+              {entry.impact}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </SectionCollapse>
+</section>

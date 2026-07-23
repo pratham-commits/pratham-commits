@@ -1,0 +1,33 @@
+---
+interface Props {
+  name: string;
+  availability: string;
+  currentPage?: 'home' | 'exploring';
+}
+
+const { name, availability, currentPage = 'home' } = Astro.props;
+const homeHref = currentPage === 'exploring' ? '/' : '#top';
+const onExploring = currentPage === 'exploring';
+---
+
+<nav class="nav mono" aria-label="Main">
+  <div class="nav-start">
+    <a class="nav-name" href={homeHref}>{name}</a>
+    <span class="nav-availability" role="status">
+      <span class="nav-availability-dot" aria-hidden="true"></span>
+      {availability}
+    </span>
+  </div>
+  <div class="nav-links">
+    <a href={onExploring ? '/#about' : '#about'}>About</a>
+    <a href={onExploring ? '/#experience' : '#experience'}>Experience</a>
+    <a href={onExploring ? '/#work' : '#work'}>Work</a>
+    <a
+      href="/exploring"
+      class:list={['nav-page-link', { 'is-current': onExploring }]}
+      aria-current={onExploring ? 'page' : undefined}
+    >
+      Exploring
+    </a>
+  </div>
+</nav>

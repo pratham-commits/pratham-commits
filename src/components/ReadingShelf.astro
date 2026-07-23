@@ -1,0 +1,101 @@
+---
+import {
+  readingItems,
+  readingKindBadge,
+  type ReadingKind,
+} from '../data/reading';
+import ReadingTile from './ReadingTile.astro';
+
+const kindOrder: ReadingKind[] = ['paper', 'article', 'book', 'video', 'repo'];
+const filterKinds = kindOrder.filter((kind) =>
+  readingItems.some((item) => item.kind === kind),
+);
+
+const readingNow = readingItems.filter((item) => item.status === 'reading');
+const shelfItems = readingItems.filter((item) => item.status !== 'reading');
+---
+
+<div class="reading-shelf">
+  {
+    readingItems.length === 0 ? (
+      <p class="reading-shelf-empty mono">
+        Nothing here yet. Add links in src/data/reading.ts.
+      </p>
+    ) : (
+      <>
+        {
+          filterKinds.map((kind) => (
+            <input
+              type="radio"
+              name="reading-filter"
+              id={`reading-filter-${kind}`}
+              class="reading-filter-input"
+            />
+          ))
+        }
+        <input
+          type="radio"
+          name="reading-filter"
+          id="reading-filter-all"
+          class="reading-filter-input"
+          checked
+        />
+
+        <div class="reading-filters mono" role="group" aria-label="Filter by type">
+          <label class="reading-filter" for="reading-filter-all">All</label>
+          {
+            filterKinds.map((kind) => (
+              <label class="reading-filter" for={`reading-filter-${kind}`}>
+                {readingKindBadge[kind]}
+              </label>
+            ))
+          }
+        </div>
+
+        <p class="reading-filter-empty mono">Nothing in this category yet.</p>
+
+        <div class="reading-content">
+          {
+            readingNow.length > 0 ? (
+              <section class="reading-now" aria-labelledby="reading-now-label">
+                <h2 class="reading-now-label mono" id="reading-now-label">
+                  Now exploring
+                </h2>
+                <ul class="reading-now-row">
+                  {readingNow.map((item) => (
+                    <li>
+                      <ReadingTile item={item} />
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ) : null
+          }
+          {
+            shelfItems.length > 0 ? (
+              <ul class="reading-masonry">
+                {shelfItems.map((item) => (
+                  <li>
+                    <ReadingTile item={item} />
+                  </li>
+                ))}
+              </ul>
+            ) : null
+          }
+        </div>
+      </>
+    )
+  }
+</div>
+
+<script>
+  import { initReadingFilterDeselect } from '../scripts/reading-filter-deselect.js';
+
+  const run = () => initReadingFilterDeselect(document.querySelector('.reading-shelf'));
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run, { once: true });
+  } else {
+    run();
+  }
+</script>

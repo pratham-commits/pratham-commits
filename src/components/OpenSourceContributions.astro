@@ -1,0 +1,31 @@
+---
+import SectionCollapse from './SectionCollapse.astro';
+import type { OpenSourceContribution } from '../data/site';
+
+interface Props {
+  contributions: OpenSourceContribution[];
+}
+
+const { contributions } = Astro.props;
+---
+
+<section class="section">
+  <SectionCollapse index="05" title="Open source contributions" id="open-source">
+    <ul class="oss-list">
+      {
+        contributions.map((item) => (
+          <li class="oss-entry">
+            <div class="oss-row">
+              <h3 class="oss-title">{item.title}</h3>
+              <a class="oss-action mono" href={item.href} target="_blank" rel="noreferrer">
+                PR ↗
+              </a>
+            </div>
+            <p class="oss-repo mono">{item.repo}</p>
+            <p class="oss-desc">{item.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </SectionCollapse>
+</section>

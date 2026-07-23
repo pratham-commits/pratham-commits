@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import AsciiHero from '../components/AsciiHero.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
+import OpenSourceContributions from '../components/OpenSourceContributions.astro';
+import ProjectList from '../components/ProjectList.astro';
+import SideRepos from '../components/SideRepos.astro';
+import ReadingTeaser from '../components/ReadingTeaser.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site';
+import { readingPage } from '../data/reading';
+---
+
+<BaseLayout title={site.title} description={site.description}>
+  <AsciiHero />
+  <Nav name={site.navName} availability={site.availability} />
+  <main>
+    <Hero
+      name={site.name}
+      subline={site.subline}
+      tagline={site.heroTagline}
+      heroKicker={site.heroKicker}
+      contact={site.contact}
+      elsewhere={site.elsewhere}
+    />
+    <About text={site.about} />
+    <Experience entries={site.experience} />
+    <ProjectList projects={site.projects} />
+    <Education entries={site.education} />
+    <OpenSourceContributions contributions={site.openSourceContributions} />
+    <SideRepos intro={site.sideReposIntro} repos={site.sideRepos} />
+    <ReadingTeaser title={readingPage.title} blurb={readingPage.intro} />
+  </main>
+  <Footer name={site.name} siteUrl={Astro.site?.href.replace(/\/$/, '') ?? ''} />
+</BaseLayout>

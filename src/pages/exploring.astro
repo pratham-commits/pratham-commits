@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AsciiHero from '../components/AsciiHero.astro';
+import Nav from '../components/Nav.astro';
+import ReadingShelf from '../components/ReadingShelf.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site';
+import { readingPage } from '../data/reading';
+---
+
+<BaseLayout title={readingPage.documentTitle} description={readingPage.description}>
+  <AsciiHero />
+  <Nav
+    name={site.navName}
+    availability={site.availability}
+    currentPage="exploring"
+  />
+  <main class="reading-page">
+    <section class="section reading-page-shell">
+      <header class="reading-page-header">
+        <h1 class="reading-page-title">{readingPage.title}</h1>
+        <p class="reading-page-intro">{readingPage.intro}</p>
+      </header>
+      <ReadingShelf />
+    </section>
+  </main>
+  <Footer name={site.name} siteUrl={Astro.site?.href.replace(/\/$/, '') ?? ''} />
+</BaseLayout>

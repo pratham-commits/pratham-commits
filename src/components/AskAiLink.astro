@@ -1,0 +1,22 @@
+---
+interface Props {
+  id: string;
+  label: string;
+  href: string;
+}
+
+const { id, label, href } = Astro.props;
+const title = `Ask ${label} to evaluate this portfolio`;
+---
+
+<a
+  class="ask-ai-link"
+  href={href}
+  target="_blank"
+  rel="noreferrer noopener"
+  aria-label={title}
+  title={title}
+  data-provider={id}
+>
+  <slot />
+</a>

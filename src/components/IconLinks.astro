@@ -1,0 +1,35 @@
+---
+import type { SocialLink } from '../data/site';
+import SocialIcon from './SocialIcon.astro';
+
+interface Props {
+  index: string;
+  title: string;
+  links: SocialLink[];
+  id: string;
+  showTag?: boolean;
+  compact?: boolean;
+}
+
+const { index, title, links, id, showTag = true, compact = false } = Astro.props;
+---
+
+<div class:list={['icon-section', compact && 'icon-section--compact']} id={id}>
+  {showTag && <span class="section-tag mono">({index}) {title}</span>}
+  <nav class:list={['icon-links', compact && 'icon-links--compact']} aria-label={title}>
+    {
+      links.map((link) => (
+        <a
+          class="icon-link"
+          href={link.href}
+          aria-label={link.label}
+          data-label={link.label}
+          target={link.href.startsWith('http') ? '_blank' : undefined}
+          rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+        >
+          <SocialIcon icon={link.icon} />
+        </a>
+      ))
+    }
+  </nav>
+</div>

@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+import heroWorkspace from '../assets/hero-workspace-transparent.gif';
+---
+
+<div class="hero-workspace" aria-hidden="true">
+  <div class="hero-workspace-frame">
+    <Image
+      class="hero-workspace-media"
+      src={heroWorkspace}
+      alt=""
+      width={700}
+      height={700}
+      loading="eager"
+      decoding="async"
+    />
+  </div>
+</div>

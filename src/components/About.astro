@@ -1,0 +1,15 @@
+---
+import SectionCollapse from './SectionCollapse.astro';
+
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<section class="section">
+  <SectionCollapse index="01" title="About" id="about">
+    <p class="about-text">{text}</p>
+  </SectionCollapse>
+</section>

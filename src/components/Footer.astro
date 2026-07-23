@@ -1,0 +1,16 @@
+---
+import FooterAskAi from './FooterAskAi.astro';
+
+interface Props {
+  name: string;
+  siteUrl: string;
+}
+
+const { name, siteUrl } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <span class="footer-copy mono">© {year} {name}</span>
+  {siteUrl ? <FooterAskAi siteUrl={siteUrl} /> : null}
+</footer>

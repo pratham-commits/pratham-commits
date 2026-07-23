@@ -1,0 +1,51 @@
+---
+import SectionCollapse from './SectionCollapse.astro';
+import type { SideRepo } from '../data/site';
+
+interface Props {
+  intro: string;
+  repos: SideRepo[];
+}
+
+const { intro, repos } = Astro.props;
+---
+
+<section class="section">
+  <SectionCollapse index="06" title="Side repos" id="side-repos">
+    <p class="side-repos-intro">{intro}</p>
+    <ul class="side-repo-list">
+      {
+        repos.map((repo) => (
+          <li class="side-repo-entry">
+            <div class="side-repo-row">
+              <h3 class="side-repo-title">{repo.title}</h3>
+              <div class="side-repo-actions mono">
+                {
+                  repo.demo ? (
+                    <a
+                      class="side-repo-action"
+                      href={repo.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Live ↗
+                    </a>
+                  ) : null
+                }
+                <a
+                  class="side-repo-action"
+                  href={repo.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Code ↗
+                </a>
+              </div>
+            </div>
+            <p class="side-repo-desc">{repo.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </SectionCollapse>
+</section>

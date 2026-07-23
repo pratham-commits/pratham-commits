@@ -1,0 +1,41 @@
+---
+import {
+  readingKindBadge,
+  readingStatusLabels,
+  type ReadingItem,
+} from '../data/reading';
+import { resolveTileSize } from '../lib/reading-tile';
+
+interface Props {
+  item: ReadingItem;
+}
+
+const { item } = Astro.props;
+const size = resolveTileSize(item);
+const isReading = item.status === 'reading';
+---
+
+<a
+  class:list={[
+    'reading-tile',
+    `reading-tile--${size}`,
+    { 'reading-tile--reading': isReading },
+  ]}
+  href={item.href}
+  target="_blank"
+  rel="noreferrer"
+  data-reading-kind={item.kind}
+  data-reading-status={item.status ?? 'none'}
+>
+  <div class="reading-tile-head mono">
+    <span class="reading-tile-kind">{readingKindBadge[item.kind]}</span>
+    <div class="reading-tile-head-end">
+      {item.status ? (
+        <span class="reading-tile-status">{readingStatusLabels[item.status]}</span>
+      ) : null}
+      <span class="reading-tile-arrow" aria-hidden="true">↗</span>
+    </div>
+  </div>
+  <span class="reading-tile-title">{item.title}</span>
+  {item.note ? <p class="reading-tile-note">{item.note}</p> : null}
+</a>

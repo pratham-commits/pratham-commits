@@ -1,0 +1,16 @@
+---
+import type { SocialLink } from '../data/site';
+import IconLinks from './IconLinks.astro';
+
+interface Props {
+  contact: SocialLink[];
+  elsewhere: SocialLink[];
+}
+
+const { contact, elsewhere } = Astro.props;
+---
+
+<section class="section social-sections" id="contact">
+  <IconLinks index="03" title="Contact" links={contact} id="contact-links" />
+  <IconLinks index="04" title="Elsewhere" links={elsewhere} id="elsewhere" />
+</section>
