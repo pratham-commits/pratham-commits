@@ -5,7 +5,7 @@
 
 <!-- Typing Animation -->
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=9CA3AF&center=true&vCenter=true&multiline=true&repeat=true&random=false&width=650&height=100&lines=Lean+web+products+%26+AI+agents;LLM+Intern+%40+Blink+Analytics;I+stay+one+arXiv+binge+ahead+of+the+curve" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=9CA3AF&center=true&vCenter=true&multiline=true&repeat=true&random=false&width=650&height=100&lines=Lean+web+products.+I+stay+one+arXiv+binge+ahead+of+the+curve" alt="Typing SVG" />
 </a>
 
 <!-- Social Badges -->
