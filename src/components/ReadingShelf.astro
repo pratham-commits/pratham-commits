@@ -13,6 +13,7 @@ const filterKinds = kindOrder.filter((kind) =>
 
 const readingNow = readingItems.filter((item) => item.status === 'reading');
 const shelfItems = readingItems.filter((item) => item.status !== 'reading');
+const wallItems = [...readingNow, ...shelfItems];
 ---
 
 <div class="reading-shelf">
@@ -55,33 +56,29 @@ const shelfItems = readingItems.filter((item) => item.status !== 'reading');
         <p class="reading-filter-empty mono">Nothing in this category yet.</p>
 
         <div class="reading-content">
-          {
-            readingNow.length > 0 ? (
-              <section class="reading-now" aria-labelledby="reading-now-label">
+          <div class="reading-wall">
+            {
+              readingNow.length > 0 ? (
                 <h2 class="reading-now-label mono" id="reading-now-label">
                   Now exploring
                 </h2>
-                <ul class="reading-now-row">
-                  {readingNow.map((item) => (
+              ) : null
+            }
+            {
+              wallItems.length > 0 ? (
+                <ul
+                  class="reading-masonry"
+                  {...(readingNow.length > 0 ? { 'aria-labelledby': 'reading-now-label' } : {})}
+                >
+                  {wallItems.map((item) => (
                     <li>
                       <ReadingTile item={item} />
                     </li>
                   ))}
                 </ul>
-              </section>
-            ) : null
-          }
-          {
-            shelfItems.length > 0 ? (
-              <ul class="reading-masonry">
-                {shelfItems.map((item) => (
-                  <li>
-                    <ReadingTile item={item} />
-                  </li>
-                ))}
-              </ul>
-            ) : null
-          }
+              ) : null
+            }
+          </div>
         </div>
       </>
     )
@@ -90,8 +87,13 @@ const shelfItems = readingItems.filter((item) => item.status !== 'reading');
 
 <script>
   import { initReadingFilterDeselect } from '../scripts/reading-filter-deselect.js';
+  import { initReadingMasonry } from '../scripts/reading-masonry.js';
 
-  const run = () => initReadingFilterDeselect(document.querySelector('.reading-shelf'));
+  const run = () => {
+    const shelf = document.querySelector('.reading-shelf');
+    initReadingFilterDeselect(shelf);
+    initReadingMasonry(shelf);
+  };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', run, { once: true });

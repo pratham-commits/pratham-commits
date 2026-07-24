@@ -76,7 +76,7 @@ export const site = {
   heroKicker: 'I am',
 
   // <head>
-  title: 'Pratham Shah, Developer',
+  title: 'Pratham Shah',
   description:
     'Developer portfolio of Pratham Shah. Fast, thoughtful products for the web.',
 
