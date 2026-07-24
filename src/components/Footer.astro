@@ -11,6 +11,8 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
-  <span class="footer-copy mono">© {year} {name}</span>
-  {siteUrl ? <FooterAskAi siteUrl={siteUrl} /> : null}
+  <div class="footer-bar">
+    <span class="footer-copy mono">© {year} {name}</span>
+    {siteUrl ? <FooterAskAi siteUrl={siteUrl} /> : null}
+  </div>
 </footer>

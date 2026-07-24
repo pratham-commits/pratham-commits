@@ -13,6 +13,7 @@ interface Props {
 }
 
 const { name, subline, tagline, heroKicker, contact, elsewhere } = Astro.props;
+const heroLinks = [...contact, ...elsewhere];
 ---
 
 <header class="hero" id="top">
@@ -27,20 +28,12 @@ const { name, subline, tagline, heroKicker, contact, elsewhere } = Astro.props;
       <p class="hero-tagline">{tagline}</p>
     </div>
 
-    <div class="hero-social">
+    <div class="hero-social scroll-row">
       <IconLinks
         index="-"
-        title="Contact"
-        links={contact}
-        id="hero-contact"
-        showTag={false}
-        compact
-      />
-      <IconLinks
-        index="-"
-        title="Elsewhere"
-        links={elsewhere}
-        id="hero-elsewhere"
+        title="Links"
+        links={heroLinks}
+        id="hero-links"
         showTag={false}
         compact
       />
