@@ -18,7 +18,7 @@ const logos = {
 ---
 
 <section class="section">
-  <SectionCollapse index="04" title="Education" id="education">
+  <SectionCollapse index="05" title="Education" id="education">
     <div class="education-list">
       {
         entries.map((entry) => (
@@ -45,6 +45,9 @@ const logos = {
               <div class="education-meta-col mono">
                 {entry.status === 'upcoming' ? (
                   <span class="education-status education-status-upcoming">Upcoming</span>
+                ) : null}
+                {entry.status === 'in_progress' ? (
+                  <span class="education-status education-status-in-progress">In progress</span>
                 ) : null}
                 <p class="education-dates">{entry.dates}</p>
                 {entry.meta ? <p class="education-meta">{entry.meta}</p> : null}

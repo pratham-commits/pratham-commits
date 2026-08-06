@@ -1,0 +1,66 @@
+---
+import SectionCollapse from './SectionCollapse.astro';
+import type { Publication, ResearchProject } from '../data/site';
+
+interface Props {
+  projects: ResearchProject[];
+  publications: Publication[];
+}
+
+const { projects, publications } = Astro.props;
+---
+
+<section class="section">
+  <SectionCollapse index="04" title="Research" id="research">
+    {
+      projects.length > 0 ? (
+        <ul class="project-list research-project-list">
+          {projects.map((entry) => (
+            <li class="project-entry">
+              <div class="project-row">
+                <span class="mono project-id">{entry.id}</span>
+                <h3 class="project-title">{entry.title}</h3>
+                <span class="project-meta mono">{entry.meta}</span>
+                {
+                  entry.href ? (
+                    <div class="project-actions mono">
+                      <a
+                        class="project-action"
+                        href={entry.href}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {entry.linkLabel ?? 'Paper ↗'}
+                      </a>
+                    </div>
+                  ) : null
+                }
+              </div>
+              <p class="project-desc">{entry.description}</p>
+            </li>
+          ))}
+        </ul>
+      ) : null
+    }
+    {
+      publications.length > 0 ? (
+        <div class="research-publications">
+          <p class="research-publications-label mono">Publications</p>
+          <ul class="oss-list">
+            {publications.map((item) => (
+              <li class="oss-entry">
+                <div class="oss-row">
+                  <h3 class="oss-title">{item.title}</h3>
+                  <a class="oss-action mono" href={item.href} target="_blank" rel="noreferrer">
+                    {item.venue} ↗
+                  </a>
+                </div>
+                {item.note ? <p class="oss-desc">{item.note}</p> : null}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null
+    }
+  </SectionCollapse>
+</section>

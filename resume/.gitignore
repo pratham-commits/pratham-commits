@@ -1,0 +1,5 @@
+tectonic
+tectonic.tar.gz
+*.aux
+*.log
+*.out

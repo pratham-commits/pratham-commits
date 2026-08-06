@@ -2,10 +2,11 @@
 interface Props {
   name: string;
   availability: string;
+  resumeHref?: string;
   currentPage?: 'home' | 'exploring';
 }
 
-const { name, availability, currentPage = 'home' } = Astro.props;
+const { name, availability, resumeHref, currentPage = 'home' } = Astro.props;
 const homeHref = currentPage === 'exploring' ? '/' : '#top';
 const onExploring = currentPage === 'exploring';
 ---
@@ -22,12 +23,20 @@ const onExploring = currentPage === 'exploring';
     <a href={onExploring ? '/#about' : '#about'}>About</a>
     <a href={onExploring ? '/#experience' : '#experience'}>Experience</a>
     <a href={onExploring ? '/#work' : '#work'}>Work</a>
+    <a href={onExploring ? '/#research' : '#research'}>Research</a>
+    {
+      resumeHref ? (
+        <a class="nav-resume-link" href={resumeHref} target="_blank" rel="noreferrer">
+          Resume
+        </a>
+      ) : null
+    }
     <a
       href="/exploring"
-      class:list={['nav-page-link', { 'is-current': onExploring }]}
+      class:list={['nav-shelf-link', { 'is-current': onExploring }]}
       aria-current={onExploring ? 'page' : undefined}
     >
-      Exploring
+      Shelf
     </a>
   </div>
 </nav>

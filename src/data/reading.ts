@@ -21,11 +21,11 @@ export interface ReadingItem {
 }
 
 export const readingPage = {
-  title: 'Exploring',
+  title: 'Shelf',
   /** Page <title> suffix */
-  documentTitle: 'Exploring · Pratham Shah',
+  documentTitle: 'Shelf · Pratham Shah',
   description:
-    'Articles, videos, repos, and papers I am exploring or have finished and would send to a friend.',
+    'Articles, videos, repos, and papers on my shelf: finished, queued, and reading now.',
   intro:
     'Articles, videos, repos, and papers I recommend: a running list, not a ranked catalog.',
 } as const;
@@ -65,14 +65,6 @@ export const readingItems: ReadingItem[] = [
     note: 'Build a tiny GPT from scratch in an afternoon. Pairs well with your Vanilla Transformer repo.',
   },
   {
-    title: 'Pikd',
-    href: 'https://github.com/pratham-commits/pikd',
-    kind: 'repo',
-    status: 'finished',
-    size: 'm',
-    note: 'Your own project: example of how a repo pin looks on the wall.',
-  },
-  {
     title: 'The Missing Semester of Your CS Education',
     href: 'https://missing.csail.mit.edu/',
     kind: 'article',
@@ -88,19 +80,36 @@ export const readingItems: ReadingItem[] = [
     note: 'Slow read, but the storage/replication chapters stick forever.',
   },
   {
-    title: 'LoRA: Low-Rank Adaptation of Large Language Models',
-    href: 'https://arxiv.org/abs/2106.09685',
+    title: 'QLoRA: Efficient Finetuning of Quantized LLMs',
+    href: 'https://arxiv.org/abs/2305.14314',
+    kind: 'paper',
+    status: 'reading',
+    size: 'm',
+    note: 'Quantized LoRA adapters: fine-tune big models on a single GPU without full-weight copies.',
+  },
+  {
+    title: 'Neural Machine Translation by Jointly Learning to Align and Translate',
+    href: 'https://arxiv.org/abs/1409.0473',
+    kind: 'paper',
+    status: 'finished',
+    size: 'l',
+    note: 'Attention before transformers: align-and-translate with a soft search over source states.',
+  },
+  {
+    title: 'Sequence to Sequence Learning with Neural Networks',
+    href: 'https://arxiv.org/abs/1409.3215',
     kind: 'paper',
     status: 'finished',
     size: 'm',
-    note: 'Short paper, huge impact on how people fine-tune without full weights.',
+    note: 'Classic seq2seq with LSTMs: the baseline story before attention took over.',
   },
   {
-    title: 'Recursive Reasoning',
-    href: 'https://github.com/pratham-commits/Recursive-reasoning',
-    kind: 'repo',
+    title: 'Universal Language Model Fine-tuning for Text Classification',
+    href: 'https://arxiv.org/abs/1801.06146',
+    kind: 'paper',
     status: 'finished',
-    note: 'Sudoku + recursive transformer loops.',
+    size: 'm',
+    note: 'ULMFiT: pretrain a language model, then fine-tune with discriminative rates and slanted triangular schedules.',
   },
   {
     title: 'Paul Graham: How to Do Great Work',
@@ -122,7 +131,7 @@ export const readingItems: ReadingItem[] = [
     href: 'https://docs.streamlit.io/',
     kind: 'article',
     status: 'finished',
-    note: 'Quick reference when shipping Frame Tracker / Recursive Reasoning demos.',
+    note: 'Quick reference when shipping ML demos with Streamlit.',
   },
   {
     title: 'Neural Networks: Zero to Hero (playlist)',
@@ -154,14 +163,6 @@ export const readingItems: ReadingItem[] = [
     size: 's',
   },
   {
-    title: 'Snap Log',
-    href: 'https://github.com/pratham-commits/Snap-Log',
-    kind: 'repo',
-    status: 'finished',
-    size: 'm',
-    note: 'Chrome extension pin: no note on `s` tiles, more text on `m` and up.',
-  },
-  {
     title: 'Andrej Karpathy: State of GPT',
     href: 'https://www.youtube.com/watch?v=bZQun8Y4L2A',
     kind: 'video',
@@ -174,15 +175,8 @@ export const readingItems: ReadingItem[] = [
     href: 'https://arxiv.org/abs/2203.02155',
     kind: 'paper',
     status: 'reading',
-    note: 'Connects directly to internship bullets; omit `size` to see auto height.',
-  },
-  {
-    title: 'Frame Tracker',
-    href: 'https://frame-tracker.streamlit.app/',
-    kind: 'repo',
-    status: 'finished',
-    size: 'l',
-    note: 'Live demo link works too: use repo or deployed URL, whichever you want to promote.',
+    size: 'm',
+    note: 'The InstructGPT paper: SFT plus human preference ranking, the blueprint behind chat-model alignment.',
   },
 ];
 

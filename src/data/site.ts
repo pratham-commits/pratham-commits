@@ -48,7 +48,7 @@ export interface EducationEntry {
   /** e.g. CGPA */
   meta?: string;
   /** In progress vs completed */
-  status?: 'completed' | 'upcoming';
+  status?: 'completed' | 'upcoming' | 'in_progress';
   /** Notable coursework (esp. in-demand / technical) */
   subjects?: string[];
   note?: string;
@@ -60,6 +60,29 @@ export interface OpenSourceContribution {
   repo: string;
   href: string;
   description: string;
+}
+
+export interface WritingEntry {
+  title: string;
+  venue: string;
+  href: string;
+  description: string;
+}
+
+export interface ResearchProject {
+  id: string;
+  title: string;
+  meta: string;
+  description: string;
+  href?: string;
+  linkLabel?: string;
+}
+
+export interface Publication {
+  title: string;
+  venue: string;
+  href: string;
+  note?: string;
 }
 
 export const site = {
@@ -79,6 +102,12 @@ export const site = {
   title: 'Pratham Shah',
   description:
     'Developer portfolio of Pratham Shah. Fast, thoughtful products for the web.',
+
+  /** PDF resume (served from /public) */
+  resume: {
+    label: 'Resume',
+    href: '/Resume.pdf',
+  },
 
   /** One-liner under the hero title */
   heroTagline:
@@ -113,7 +142,7 @@ export const site = {
       school: 'BITS Pilani, Pilani Campus',
       degree: 'ME Computer Science',
       dates: '2026 to 2028',
-      status: 'upcoming',
+      status: 'in_progress',
       logo: 'bits',
     },
     {
@@ -138,15 +167,55 @@ export const site = {
     },
   ] satisfies EducationEntry[],
 
+  researchProjects: [
+    {
+      id: 'R001',
+      title: 'Violent HAR Detection',
+      meta: 'CV · YOLO-POSE · LSTM',
+      description:
+        'Fusion model for human activity recognition: YOLO-Pose + LSTM for temporal pose features and RGB frames + MLP for spatial features to detect violent actions.',
+    },
+    {
+      id: 'R002',
+      title: 'Hazard Surveillance and Maintenance Car',
+      meta: 'IOT · CV · ESP-CAM',
+      description:
+        'IoT and computer vision system on an ESP-CAM-based robotic car to detect five classes of electrical hazards for maintenance and surveillance.',
+    },
+  ] satisfies ResearchProject[],
+
+  publications: [
+    {
+      title: 'AI Based Prediction for Panic Disorder Detection Using Social and Clinical Factors',
+      venue: 'IEEE',
+      href: 'https://ieeexplore.ieee.org/document/11225866',
+    },
+    {
+      title: 'Smart Detection of Passive Smokers using Machine Learning',
+      venue: 'IEEE',
+      href: 'https://ieeexplore.ieee.org/document/10774944',
+    },
+  ] satisfies Publication[],
+
   openSourceContributions: [
     {
       title: 'Run LLM judge when --evaluate is passed',
       repo: 'Tracer-Cloud / opensre',
       href: 'https://github.com/Tracer-Cloud/opensre/pull/2090',
       description:
-        'Merged fix for OpenSRE: the --evaluate path now calls run_opensre_llm_judge() during delivery when a rubric is present, with regression tests for the happy path, skip guards, and error fallback. Closes #2070.',
+        'Merged fix for OpenSRE: wired the --evaluate delivery path to call run_opensre_llm_judge() when a rubric is present, instead of skipping evaluation silently. Added regression tests covering the happy path, skip guards when no rubric exists, and error fallback behavior. Closes #2070.',
     },
   ] satisfies OpenSourceContribution[],
+
+  writing: [
+    {
+      title: 'Attending to all attentions (a try!) (Part 1)',
+      venue: 'Medium',
+      href: 'https://medium.com/@prathamsshah724/attending-to-all-attentions-a-try-part-1-a8df24c3f85a',
+      description:
+        'Part 1 of a 3-part attention series tracing the history from seq2seq bottlenecks to modern variants. Explains Bahdanau (additive) and Luong (multiplicative) attention, scaled dot-product self-attention, multi-head and cross-attention, and the O(n²) quadratic bottleneck—with intuition, math, and PyTorch snippets for each mechanism.',
+    },
+  ] satisfies WritingEntry[],
 
   // Projects: archive catalog
   projects: [
@@ -161,10 +230,10 @@ export const site = {
     },
     {
       id: 'A002',
-      title: 'Recursive Reasoning',
-      meta: 'ML · RECURSIVE TRANSFORMER',
+      title: 'Recursive Reasoning (Small Language Model)',
+      meta: 'SLM · RECURSIVE TRANSFORMER',
       description:
-        'Recursive Transformer for Sudoku that re-processes its own output in thinking loops, based on “Less is More: Recursive Reasoning with Tiny Networks,” with a Streamlit dashboard for loop-by-loop visualization.',
+        'Recursive Transformer SLM for Sudoku that re-processes its own output in shared-weight thinking loops, based on “Less is More: Recursive Reasoning with Tiny Networks,” with a Streamlit dashboard for loop-by-loop visualization.',
       href: 'https://github.com/pratham-commits/Recursive-reasoning',
       demo: 'https://recursive-reasoning.streamlit.app/',
     },

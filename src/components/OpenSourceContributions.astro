@@ -1,16 +1,17 @@
 ---
 import SectionCollapse from './SectionCollapse.astro';
-import type { OpenSourceContribution } from '../data/site';
+import type { OpenSourceContribution, WritingEntry } from '../data/site';
 
 interface Props {
   contributions: OpenSourceContribution[];
+  writing?: WritingEntry[];
 }
 
-const { contributions } = Astro.props;
+const { contributions, writing = [] } = Astro.props;
 ---
 
 <section class="section">
-  <SectionCollapse index="05" title="Open source contributions" id="open-source">
+  <SectionCollapse index="06" title="Open source & writing" id="open-source">
     <ul class="oss-list">
       {
         contributions.map((item) => (
@@ -22,6 +23,20 @@ const { contributions } = Astro.props;
               </a>
             </div>
             <p class="oss-repo mono">{item.repo}</p>
+            <p class="oss-desc">{item.description}</p>
+          </li>
+        ))
+      }
+      {
+        writing.map((item) => (
+          <li class="oss-entry">
+            <div class="oss-row">
+              <h3 class="oss-title">{item.title}</h3>
+              <a class="oss-action mono" href={item.href} target="_blank" rel="noreferrer">
+                Article ↗
+              </a>
+            </div>
+            <p class="oss-repo mono">{item.venue}</p>
             <p class="oss-desc">{item.description}</p>
           </li>
         ))

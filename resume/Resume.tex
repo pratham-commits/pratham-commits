@@ -1,0 +1,138 @@
+% Resume source — compile with: ./tectonic Resume.tex
+
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[letterpaper, top=0.15in, bottom=0.38in, left=0.5in, right=0.5in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{ae}
+\usepackage{aecompl}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor=blue]{hyperref}
+\usepackage{fontawesome5}
+\usepackage{microtype}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedbottom
+
+\titleformat{\section}{\scshape\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{0pt}
+
+\newcommand{\resumename}[1]{%
+  \vspace*{-12pt}
+  \begin{center}
+    {\LARGE\bfseries #1}
+  \end{center}
+  \vspace{-8pt}
+}
+
+\newcommand{\resumecontact}{%
+  \begin{center}
+    \small
+    Ahmedabad, Gujarat, India \\[1pt]
+    \href{mailto:prathamsshah724@gmail.com}{\faIcon{envelope}~prathamsshah724@gmail.com}
+    \enspace\textbar\enspace
+    \faIcon{phone}~+91~8758137767 \\[0pt]
+    \href{https://github.com/pratham-commits}{\faGithub~GitHub}
+    \enspace\textbar\enspace
+    \href{https://www.linkedin.com/in/pratham-shah}{\faLinkedin~LinkedIn}
+    \enspace\textbar\enspace
+    \href{https://pratham-commits.vercel.app}{\faIcon{globe}~Portfolio}
+    \enspace\textbar\enspace
+    \href{https://medium.com/@prathamsshah724}{Medium}
+    \enspace\textbar\enspace
+    \href{https://leetcode.com/u/cheesy7/}{\faIcon{code}~LeetCode}
+  \end{center}
+  \vspace{-2pt}
+}
+
+\newcommand{\resumeSubheading}[2]{%
+  \textbf{#1}\hfill\small #2\par\vspace{0pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{%
+  \textbf{#1}\hfill\small #2\par\vspace{0pt}
+}
+
+\newcommand{\resumeEduRow}[3]{%
+  \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & \small #2 \\
+    & \small #3 \\
+  \end{tabular*}%
+  \vspace{1pt}
+}
+
+\newcommand{\resumeSkillRow}[2]{\textbf{#1} #2\par\vspace{0pt}}
+
+\begin{document}
+
+\resumename{Pratham Shah}
+\resumecontact
+
+\section{About}
+\small
+I like building things that feel fast and considered: lean web products that range from static sites to AI agents, made with real care so the code won't embarrass me later. The rest of my time goes to papers I don't strictly need to read, mostly because I can't help it.
+
+\section{Experience}
+\resumeSubheading{LLM Intern, Blink Analytics \textendash{} Ahmedabad, Gujarat}{May 2025 to July 2026}
+\begin{itemize}[leftmargin=*, nosep, topsep=0pt, itemsep=0pt, parsep=0pt]
+  \item Built a phone-call AI interview agent: which can serve as a reminder agent and screening agent.
+  \item Built bulk candidate processing: recruiters can upload and process large sets of prospects instead of handling them one by one.
+  \item Built payments and interview credits: companies buy plans/credits and those credits control how many AI interviews they can run.
+  \item Shipped ATS and recruiter tools: resume scoring, candidate profiles, job open/close, search/filters, candidate emails, and interview reports (including PDF).
+  \item Improved how quickly interview reports are ready after a session, and cleaned up backend Docker deploys.
+  \item Improved the existing live interview room: better speech recognition, AI agent model routing, noise cancellation, session reliability, and network monitoring.
+  \item Reviewed and helped merge teammate pull requests across  company repos.
+  \item Optimized language models using Reinforcement Learning from Human Feedback (RLHF) and Supervised Fine-Tuning (SFT).
+  \item Integrated optimized LLM pipelines into internal recruitment tools with cross-functional teams.
+\end{itemize}
+\small\textit{62 merged PRs \textperiodcentered{} 470+ commits across  company repos}
+
+\section{Projects}
+\resumeProjectHeading{Pikd}{\href{https://github.com/pratham-commits/pikd}{[GitHub]} \enspace \href{https://pikd-photos.vercel.app/}{[Live]}}
+\footnotesize
+Event photo delivery with face recognition: guests scan once and collect every photo they appear in, in seconds. Next.js + Python backend: each face is detected, embedded, and indexed; a guest selfie is matched via cosine similarity against stored vectors for instant retrieval.
+
+\resumeProjectHeading{Recursive Reasoning (Small Language Model)}{\href{https://github.com/pratham-commits/Recursive-reasoning}{[GitHub]} \enspace \href{https://recursive-reasoning.streamlit.app/}{[Demo]}}
+\footnotesize
+Recursive Transformer SLM for Sudoku that re-processes its own output in shared-weight thinking loops, based on ``Less is More: Recursive Reasoning with Tiny Networks,'' with a Streamlit dashboard for loop-by-loop visualization. PyTorch model re-processes latent states iteratively rather than adding depth; curriculum training scales 4$\times$4 to 9$\times$9 puzzles.
+
+\resumeProjectHeading{Reflect Reads}{\href{https://github.com/pratham-commits/reflect_reads}{[GitHub]}}
+\footnotesize
+Full-stack book browsing and ordering: React/Vite + Tailwind frontend, Express REST API, MongoDB, and JWT auth. bcrypt-hashed credentials and middleware guard catalog, cart, and checkout endpoints; order documents persist line items and status through a stateful checkout flow.
+
+\section{Research}
+\resumeProjectHeading{Violent HAR Detection}{}
+\footnotesize
+Fusion model for human activity recognition: YOLO-Pose + LSTM for temporal pose features and RGB frames + MLP for spatial features to detect violent actions. YOLO-Pose extracts 17-keypoint skeleton sequences into an LSTM; a parallel RGB branch passes CNN spatial features through an MLP; late fusion of both embeddings classifies violent actions.
+
+\resumeProjectHeading{Hazard Surveillance and Maintenance Car}{}
+\footnotesize
+IoT and computer vision system on an ESP-CAM-based robotic car to detect five classes of electrical hazards for maintenance and surveillance. Live frames stream through a lightweight classifier (exposed wiring, damaged insulation, etc.); detected hazards trigger on-device alerts and drive autonomous patrol.
+
+\vspace{1pt}
+\footnotesize
+\textbf{AI Based Prediction for Panic Disorder Detection Using Social and Clinical Factors} \hfill \href{https://ieeexplore.ieee.org/document/11225866}{[IEEE]} \\
+\textbf{Smart Detection of Passive Smokers using Machine Learning} \hfill \href{https://ieeexplore.ieee.org/document/10774944}{[IEEE]}
+
+\section{Open Source \& Writing}
+\footnotesize
+\textbf{Run LLM judge when \texttt{--evaluate} is passed} \textendash{} Tracer-Cloud / opensre. Wired the \texttt{--evaluate} delivery path to call \texttt{run\_opensre\_llm\_judge()} when a rubric is present, instead of skipping evaluation silently. Added regression tests for happy path, skip guards, and error fallback. Closes \#2070. \href{https://github.com/Tracer-Cloud/opensre/pull/2090}{[PR \#2090]}
+
+\textbf{Attending to all attentions (a try!) (Part 1)} \textendash{} Medium. Part 1 of a 3-part attention series: Bahdanau and Luong attention, scaled dot-product self-attention, multi-head and cross-attention, and O($n^2$) quadratic bottleneck---with intuition, math, and PyTorch snippets. \href{https://medium.com/@prathamsshah724/attending-to-all-attentions-a-try-part-1-a8df24c3f85a}{[Article]}
+
+\section{Education}
+\resumeEduRow{ME Computer Science, BITS Pilani, Pilani Campus}{2026 to 2028}{In Progress}
+\resumeEduRow{B.Tech Computer Engineering, Pandit Deendayal Energy University (PDEU)}{2022 to 2026}{CGPA 9.562}
+\resumeEduRow{HBK New High School, Ahmedabad}{2020 to 2022}{HSC: 82.46\%}
+
+\section{Technical Skills}
+\footnotesize
+\resumeSkillRow{Languages}{Python (Blink, Pikd, Recursive Reasoning), JavaScript/TypeScript (Reflect Reads, Pikd), Java, C, SQL}
+\resumeSkillRow{ML / AI}{PyTorch, TensorFlow, Hugging Face, LangChain, Transformers, RLHF, SFT, RAG, NLP, CNNs, LSTMs, YOLO-Pose, Face Embeddings}
+\resumeSkillRow{Web / Backend}{Next.js, React, Vite, Tailwind, Node.js, Express, MongoDB, REST, JWT, FastAPI, Streamlit}
+\resumeSkillRow{Tools / Cloud}{Docker, Git, GitHub, AWS, Azure, Linux, CI/CD}
+
+\end{document}

@@ -13,6 +13,7 @@ import { readingPage } from '../data/reading';
   <Nav
     name={site.navName}
     availability={site.availability}
+    resumeHref={site.resume.href}
     currentPage="exploring"
   />
   <main class="reading-page">
@@ -24,5 +25,10 @@ import { readingPage } from '../data/reading';
       <ReadingShelf />
     </section>
   </main>
-  <Footer name={site.name} siteUrl={Astro.site?.href.replace(/\/$/, '') ?? ''} />
+  <Footer
+    name={site.name}
+    siteUrl={Astro.site?.href.replace(/\/$/, '') ?? ''}
+    resumeHref={site.resume.href}
+    resumeLabel={site.resume.label}
+  />
 </BaseLayout>

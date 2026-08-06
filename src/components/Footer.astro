@@ -4,15 +4,26 @@ import FooterAskAi from './FooterAskAi.astro';
 interface Props {
   name: string;
   siteUrl: string;
+  resumeHref?: string;
+  resumeLabel?: string;
 }
 
-const { name, siteUrl } = Astro.props;
+const { name, siteUrl, resumeHref, resumeLabel = 'Resume' } = Astro.props;
 const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
   <div class="footer-bar">
     <span class="footer-copy mono">© {year} {name}</span>
-    {siteUrl ? <FooterAskAi siteUrl={siteUrl} /> : null}
+    <div class="footer-end">
+      {
+        resumeHref ? (
+          <a class="footer-resume mono" href={resumeHref} target="_blank" rel="noreferrer">
+            {resumeLabel} ↗
+          </a>
+        ) : null
+      }
+      {siteUrl ? <FooterAskAi siteUrl={siteUrl} /> : null}
+    </div>
   </div>
 </footer>

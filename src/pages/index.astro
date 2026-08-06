@@ -7,6 +7,7 @@ import About from '../components/About.astro';
 import Experience from '../components/Experience.astro';
 import Education from '../components/Education.astro';
 import OpenSourceContributions from '../components/OpenSourceContributions.astro';
+import Research from '../components/Research.astro';
 import ProjectList from '../components/ProjectList.astro';
 import SideRepos from '../components/SideRepos.astro';
 import ReadingTeaser from '../components/ReadingTeaser.astro';
@@ -17,7 +18,11 @@ import { readingPage } from '../data/reading';
 
 <BaseLayout title={site.title} description={site.description}>
   <AsciiHero />
-  <Nav name={site.navName} availability={site.availability} />
+  <Nav
+    name={site.navName}
+    availability={site.availability}
+    resumeHref={site.resume.href}
+  />
   <main>
     <Hero
       name={site.name}
@@ -30,10 +35,16 @@ import { readingPage } from '../data/reading';
     <About text={site.about} />
     <Experience entries={site.experience} />
     <ProjectList projects={site.projects} />
+    <Research projects={site.researchProjects} publications={site.publications} />
     <Education entries={site.education} />
-    <OpenSourceContributions contributions={site.openSourceContributions} />
+    <OpenSourceContributions contributions={site.openSourceContributions} writing={site.writing} />
     <SideRepos intro={site.sideReposIntro} repos={site.sideRepos} />
     <ReadingTeaser title={readingPage.title} blurb={readingPage.intro} />
   </main>
-  <Footer name={site.name} siteUrl={Astro.site?.href.replace(/\/$/, '') ?? ''} />
+  <Footer
+    name={site.name}
+    siteUrl={Astro.site?.href.replace(/\/$/, '') ?? ''}
+    resumeHref={site.resume.href}
+    resumeLabel={site.resume.label}
+  />
 </BaseLayout>
