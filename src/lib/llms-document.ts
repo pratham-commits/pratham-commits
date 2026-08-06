@@ -11,7 +11,8 @@ export function buildLlmsDocument(baseUrl: string, data: Site): string {
     '',
     '## Site',
     `- [Homepage](${url}/)`,
-    `- [Exploring / reading list](${url}/exploring/)`,
+    `- [Shelf / reading list](${url}/exploring/)`,
+    `- [Resume (PDF)](${url}${data.resume.href})`,
     `- [LLM summary (this file)](${url}/llms.txt)`,
     '',
     '## Identity',
@@ -40,19 +41,12 @@ export function buildLlmsDocument(baseUrl: string, data: Site): string {
   for (const ed of data.education) {
     lines.push(`### ${ed.school} (${ed.dates})`);
     lines.push(`Degree: ${ed.degree}`);
+    if (ed.status === 'in_progress') lines.push('Status: In progress');
     if (ed.meta) lines.push(ed.meta);
     if (ed.note) lines.push(ed.note);
     if (ed.subjects?.length) {
       lines.push(`Coursework: ${ed.subjects.join(', ')}`);
     }
-    lines.push('');
-  }
-
-  lines.push('## Open source contributions');
-  for (const pr of data.openSourceContributions) {
-    lines.push(`### ${pr.title} (${pr.repo})`);
-    lines.push(pr.description);
-    lines.push(`- [Pull request](${pr.href})`);
     lines.push('');
   }
 
@@ -62,6 +56,36 @@ export function buildLlmsDocument(baseUrl: string, data: Site): string {
     lines.push(p.description);
     lines.push(`- [Repository](${p.href})`);
     if (p.demo) lines.push(`- [Live demo](${p.demo})`);
+    lines.push('');
+  }
+
+  lines.push('## Research');
+  for (const entry of data.researchProjects) {
+    lines.push(`### ${entry.id} ${entry.title} (${entry.meta})`);
+    lines.push(entry.description);
+    if (entry.href) lines.push(`- [${entry.linkLabel ?? 'Link'}](${entry.href})`);
+    lines.push('');
+  }
+
+  lines.push('## Publications');
+  for (const pub of data.publications) {
+    lines.push(`### ${pub.title}`);
+    lines.push(`- [${pub.venue}](${pub.href})`);
+    if (pub.note) lines.push(pub.note);
+    lines.push('');
+  }
+
+  lines.push('## Open source & writing');
+  for (const pr of data.openSourceContributions) {
+    lines.push(`### ${pr.title} (${pr.repo})`);
+    lines.push(pr.description);
+    lines.push(`- [Pull request](${pr.href})`);
+    lines.push('');
+  }
+  for (const article of data.writing) {
+    lines.push(`### ${article.title} (${article.venue})`);
+    lines.push(article.description);
+    lines.push(`- [Article](${article.href})`);
     lines.push('');
   }
 
