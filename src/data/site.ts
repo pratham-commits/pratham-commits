@@ -294,7 +294,7 @@ export const site = {
     {
       label: 'LinkedIn',
       icon: 'linkedin',
-      href: 'https://www.linkedin.com/in/pratham-shah',
+      href: 'https://www.linkedin.com/in/prathamm-shahh',
     },
   ] satisfies SocialLink[],
 

@@ -14,7 +14,7 @@
   <img src="https://img.shields.io/badge/Portfolio-Live-181818?style=for-the-badge&logo=vercel&logoColor=white" />
 </a>
 &nbsp;
-<a href="https://www.linkedin.com/in/pratham-shah">
+<a href="https://www.linkedin.com/in/prathamm-shahh">
   <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0A66C2" />
 </a>
 &nbsp;
@@ -259,7 +259,7 @@ fun_fact: "I implement papers from scratch for fun! 📚"
   <img src="https://img.shields.io/badge/Visit_my_Portfolio-181818?style=for-the-badge&logo=vercel&logoColor=white" />
 </a>
 <br/><br/>
-<a href="https://www.linkedin.com/in/pratham-shah">
+<a href="https://www.linkedin.com/in/prathamm-shahh">
   <img src="https://img.shields.io/badge/Let's_connect_on_LinkedIn!-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
 </a>
 <br/><br/>
