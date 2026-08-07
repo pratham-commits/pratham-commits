@@ -174,6 +174,8 @@ export const site = {
       meta: 'CV · YOLO-POSE · LSTM',
       description:
         'Fusion model for human activity recognition: YOLO-Pose + LSTM for temporal pose features and RGB frames + MLP for spatial features to detect violent actions.',
+      href: 'https://github.com/pratham-commits/violence-har-detection',
+      linkLabel: 'GitHub ↗',
     },
     {
       id: 'R002',
