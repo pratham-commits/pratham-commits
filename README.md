@@ -4,7 +4,7 @@ Dev += research · India · **available for work**
 
 I build lean web products and stay one arXiv binge ahead of the curve.
 
-**Links:** [Portfolio](https://pratham-commits.vercel.app) · [LinkedIn](https://www.linkedin.com/in/prathamm-shahh) · [GitHub](https://github.com/pratham-commits) · [Email](mailto:prathamsshah724@gmail.com) · [Medium](https://medium.com/@prathamsshah724) · [X](https://x.com/Pratham_commits) · [LeetCode](https://leetcode.com/u/cheesy7/) · [llms.txt](https://pratham-commits.vercel.app/llms.txt)
+**Links:** [Portfolio](https://prathamshah.in) · [LinkedIn](https://www.linkedin.com/in/prathamm-shahh) · [GitHub](https://github.com/pratham-commits) · [Email](mailto:prathamsshah724@gmail.com) · [Medium](https://medium.com/@prathamsshah724) · [X](https://x.com/Pratham_commits) · [LeetCode](https://leetcode.com/u/cheesy7/) · [llms.txt](https://prathamshah.in/llms.txt)
 
 ---
 
@@ -33,10 +33,10 @@ Event photo delivery with face recognition — scan once, get every photo you're
 **Stack:** Next.js · Python · face embeddings  
 **Live:** [pikd-photos.vercel.app](https://pikd-photos.vercel.app/)
 
-### [Recursive Reasoning (Small Language Model)](https://github.com/pratham-commits/Recursive-reasoning)
-Recursive Transformer SLM for Sudoku with shared-weight thinking loops and a Streamlit dashboard.  
-**Stack:** PyTorch · Streamlit  
-**Demo:** [recursive-reasoning.streamlit.app](https://recursive-reasoning.streamlit.app/)
+### [Vaani (Gujarati Small Language Model)](https://github.com/pratham-commits/vaani)
+From-scratch ~110M Gujarati decoder-only SLM: pretrain, instruction + open-book SFT, MinHash dedup pipeline, custom eval harness.  
+**Stack:** PyTorch · Hugging Face  
+**Weights:** [huggingface.co/pratham-commits/vaani-gujarati-slm](https://huggingface.co/pratham-commits/vaani-gujarati-slm)
 
 ### [Reflect Reads](https://github.com/pratham-commits/reflect_reads)
 Full-stack bookstore — browse, cart, checkout with JWT auth.  

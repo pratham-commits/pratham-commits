@@ -6,7 +6,7 @@ export const prerender = true;
 
 export const GET: APIRoute = ({ site: astroSite }) => {
   const base =
-    astroSite?.href.replace(/\/$/, '') ?? 'https://pratham-commits.vercel.app';
+    astroSite?.href.replace(/\/$/, '') ?? 'https://prathamshah.in';
   const body = buildLlmsDocument(base, site);
 
   return new Response(body, {

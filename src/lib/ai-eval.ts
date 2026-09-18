@@ -17,7 +17,7 @@ export function buildEvalPrompt(siteUrl: string): string {
     '3) Best-fit roles (full-stack web, LLM/product engineering, etc.)',
     '4) Fair gaps or open questions',
     '',
-    'Prioritize evidence from Blink Analytics internship, production-style projects (Pikd, Recursive Reasoning), and GitHub/live demo links.',
+    'Prioritize evidence from Blink Analytics internship, production-style projects (Pikd, Vaani), and GitHub/live demo links.',
     'Tone: professional, evidence-based, balanced.',
   ].join('\n');
 }

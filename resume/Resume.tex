@@ -32,14 +32,12 @@
   \begin{center}
     \small
     Ahmedabad, Gujarat, India \\[1pt]
-    \href{mailto:prathamsshah724@gmail.com}{\faIcon{envelope}~prathamsshah724@gmail.com}%
-    \enspace\textperiodcentered\enspace
-    \\[0pt]
+    \href{mailto:contact@prathamshah.in}{\faIcon{envelope}~contact@prathamshah.in} \\[0pt]
     \href{https://github.com/pratham-commits}{\faGithub~GitHub}
     \enspace\textbar\enspace
     \href{https://www.linkedin.com/in/prathamm-shahh}{\faLinkedin~LinkedIn}
     \enspace\textbar\enspace
-    \href{https://pratham-commits.vercel.app}{\faIcon{globe}~Portfolio}
+    \href{https://prathamshah.in}{\faIcon{globe}~Portfolio}
     \enspace\textbar\enspace
     \href{https://medium.com/@prathamsshah724}{Medium}
     \enspace\textbar\enspace
@@ -95,9 +93,9 @@ I like building things that feel fast and considered: lean web products that ran
 \footnotesize
 Event photo delivery with face recognition: guests scan once and collect every photo they appear in, in seconds. Next.js + Python backend: each face is detected, embedded, and indexed; a guest selfie is matched via cosine similarity against stored vectors for instant retrieval.
 
-\resumeProjectHeading{Recursive Reasoning (Small Language Model)}{\href{https://github.com/pratham-commits/Recursive-reasoning}{[GitHub]} \enspace \href{https://recursive-reasoning.streamlit.app/}{[Demo]}}
+\resumeProjectHeading{Vaani (Gujarati Small Language Model)}{\href{https://github.com/pratham-commits/vaani}{[GitHub]} \enspace \href{https://huggingface.co/pratham-commits/vaani-gujarati-slm}{[Weights]}}
 \footnotesize
-Recursive Transformer SLM for Sudoku that re-processes its own output in shared-weight thinking loops, based on ``Less is More: Recursive Reasoning with Tiny Networks,'' with a Streamlit dashboard for loop-by-loop visualization. PyTorch model re-processes latent states iteratively rather than adding depth; curriculum training scales 4$\times$4 to 9$\times$9 puzzles.
+110M-parameter, from-scratch decoder-only SLM for Gujarati medical assistance (low-resource Indic). Llama-style stack (RMSNorm/RoPE/SwiGLU), ~6.78B-token pretrain, instruction + open-book SFT, and a custom eval harness (MCQ acc\_norm, rule-based instruction-following buckets, context-grounded open-book MCQ). Full corpus pipeline: build, MinHash dedup, and a character-level BPE tokenizer A/B study. On the Gujarati eval it matches or beats 2B models (gemma-2B, sarvam-2B) and ties Qwen-7B on instruction-following. Weights on Hugging Face.
 
 \resumeProjectHeading{Reflect Reads}{\href{https://github.com/pratham-commits/reflect_reads}{[GitHub]}}
 \footnotesize
@@ -130,7 +128,7 @@ IoT and computer vision system on an ESP-CAM-based robotic car to detect five cl
 
 \section{Technical Skills}
 \footnotesize
-\resumeSkillRow{Languages}{Python (Blink, Pikd, Recursive Reasoning), JavaScript/TypeScript (Reflect Reads, Pikd), Java, C, SQL}
+\resumeSkillRow{Languages}{Python (Blink, Pikd, Vaani), JavaScript/TypeScript (Reflect Reads, Pikd), Java, C, SQL}
 \resumeSkillRow{ML / AI}{PyTorch, TensorFlow, Hugging Face, LangChain, Transformers, RLHF, SFT, RAG, NLP, CNNs, LSTMs, YOLO-Pose, Face Embeddings}
 \resumeSkillRow{Web / Backend}{Next.js, React, Vite, Tailwind, Node.js, Express, MongoDB, REST, JWT, FastAPI, Streamlit}
 \resumeSkillRow{Tools / Cloud}{Docker, Git, GitHub, AWS, Azure, Linux, CI/CD}

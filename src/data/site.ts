@@ -232,12 +232,12 @@ export const site = {
     },
     {
       id: 'A002',
-      title: 'Recursive Reasoning (Small Language Model)',
-      meta: 'SLM · RECURSIVE TRANSFORMER',
+      title: 'Vaani (Gujarati Small Language Model)',
+      meta: 'SLM · ~110M · GUJARATI',
       description:
-        'Recursive Transformer SLM for Sudoku that re-processes its own output in shared-weight thinking loops, based on “Less is More: Recursive Reasoning with Tiny Networks,” with a Streamlit dashboard for loop-by-loop visualization.',
-      href: 'https://github.com/pratham-commits/Recursive-reasoning',
-      demo: 'https://recursive-reasoning.streamlit.app/',
+        'From-scratch ~110M decoder-only SLM for Gujarati medical assistance: Llama-style stack, ~6.78B-token pretrain, instruction and open-book SFT, MinHash dedup corpus pipeline, and eval harness with published Hugging Face weights.',
+      href: 'https://github.com/pratham-commits/vaani',
+      demo: 'https://huggingface.co/pratham-commits/vaani-gujarati-slm',
     },
     {
       id: 'A003',
@@ -291,7 +291,7 @@ export const site = {
     {
       label: 'Email Pratham Shah',
       icon: 'email',
-      href: 'mailto:prathamsshah724@gmail.com',
+      href: 'mailto:contact@prathamshah.in',
     },
     {
       label: 'LinkedIn',
