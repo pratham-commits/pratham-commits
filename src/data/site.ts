@@ -120,7 +120,7 @@ export const site = {
   experience: [
     {
       company: 'Blink Analytics',
-      role: 'LLM Intern',
+      role: 'Founding Engineer Intern',
       dates: 'May 2025 to July 2026',
       highlights: [
         'Built a phone-call AI interview agent: which can serve as a reminder agent and screening agent.',

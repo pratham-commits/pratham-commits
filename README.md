@@ -16,7 +16,7 @@ I like building things that feel fast and considered: lean web products that ran
 
 ## Work
 
-**Blink Analytics** — LLM Intern
+**Blink Analytics** — Founding Engineer Intern
 
 - Phone-call AI interview and screening agents; bulk candidate processing
 - ATS: resume scoring, profiles, job workflows, emails, PDF reports
