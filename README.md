@@ -22,7 +22,9 @@ I like building things that feel fast and considered: lean web products that ran
 - ATS: resume scoring, profiles, job workflows, emails, PDF reports
 - Live interview stack: speech recognition, model routing, noise cancellation
 - RLHF / SFT pipelines integrated into production recruitment tools
-- Open source: [OpenSRE #2090](https://github.com/Tracer-Cloud/opensre/pull/2090)
+
+## Open source: 
+- [OpenSRE #2090](https://github.com/Tracer-Cloud/opensre/pull/2090)
 
 ---
 
