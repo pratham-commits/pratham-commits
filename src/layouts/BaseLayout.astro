@@ -1,4 +1,11 @@
 ---
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
+import {
+  buildPersonJsonLd,
+  buildProfilePageJsonLd,
+  buildWebSiteJsonLd,
+} from '../lib/json-ld';
 import '../styles/global.css';
 
 interface Props {
@@ -7,23 +14,50 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const origin = Astro.site?.href.replace(/\/$/, '') ?? 'https://prathamshah.in';
+const canonical = new URL(Astro.url.pathname, Astro.site ?? origin);
+const ogImage = new URL('/og.svg', origin).href;
+
+const jsonLd = [
+  buildWebSiteJsonLd(origin),
+  buildPersonJsonLd(origin),
+  buildProfilePageJsonLd(origin, canonical.href, title, description),
+];
+const jsonLdScript = JSON.stringify(jsonLd);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content="Pratham Shah" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="googlebot" content="index, follow" />
     <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary" />
+    <link rel="me" href="https://github.com/pratham-commits" />
+    <link rel="me" href="https://www.linkedin.com/in/prathamm-shahh" />
+    <meta property="og:site_name" content="Pratham Shah" />
+    <meta property="og:locale" content="en_IN" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="Pratham Shah — software engineer portfolio at prathamshah.in" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:creator" content="@Pratham_commits" />
+    <script type="application/ld+json" set:html={jsonLdScript} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,5 +67,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body>
     <slot />
+    <Analytics />
+    <SpeedInsights />
   </body>
 </html>

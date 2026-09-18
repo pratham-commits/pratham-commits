@@ -98,10 +98,10 @@ export const site = {
   /** Mono kicker above hero title */
   heroKicker: 'I am',
 
-  // <head>
-  title: 'Pratham Shah',
+  // <head> — keep "Pratham Shah" and prathamshah.in prominent for search / AI retrieval
+  title: 'Pratham Shah | Software Engineer · ML & Web',
   description:
-    'Developer portfolio of Pratham Shah. Fast, thoughtful products for the web.',
+    'Official portfolio of Pratham Shah at prathamshah.in. Founding Engineer Intern (Blink Analytics), ML/LLM products, full-stack web, and research. Resume, projects, GitHub, and contact.',
 
   /** PDF resume (served from /public) */
   resume: {
