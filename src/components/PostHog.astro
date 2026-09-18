@@ -1,0 +1,40 @@
+---
+/** Loads only when PUBLIC_POSTHOG_KEY is set at build time (Vercel env). */
+const posthogKey = import.meta.env.PUBLIC_POSTHOG_KEY;
+---
+
+{
+  posthogKey ? (
+    <script>
+      import posthog from 'posthog-js';
+
+      const key = import.meta.env.PUBLIC_POSTHOG_KEY;
+      const host =
+        import.meta.env.PUBLIC_POSTHOG_HOST ?? 'https://us.i.posthog.com';
+
+      if (!key || import.meta.env.DEV) {
+        // no-op in local dev unless you set the key and remove this guard
+      } else {
+        const initPostHog = () => {
+          posthog.init(key, {
+            api_host: host,
+            ui_host: 'https://us.posthog.com',
+            person_profiles: 'identified_only',
+            capture_pageview: true,
+            capture_pageleave: true,
+            autocapture: true,
+            disable_session_recording: true,
+            persistence: 'localStorage+cookie',
+            advanced_disable_flags: true,
+          });
+        };
+
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(initPostHog, { timeout: 4000 });
+        } else {
+          window.addEventListener('load', () => setTimeout(initPostHog, 150));
+        }
+      }
+    </script>
+  ) : null
+}

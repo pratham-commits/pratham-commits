@@ -1,5 +1,6 @@
 ---
 import Analytics from '@vercel/analytics/astro';
+import PostHog from '../components/PostHog.astro';
 import SpeedInsights from '@vercel/speed-insights/astro';
 import {
   buildPersonJsonLd,
@@ -73,5 +74,6 @@ const jsonLdScript = JSON.stringify(jsonLd);
     <slot />
     <Analytics />
     <SpeedInsights />
+    <PostHog />
   </body>
 </html>
