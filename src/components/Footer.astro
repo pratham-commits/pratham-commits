@@ -1,5 +1,6 @@
 ---
 import FooterAskAi from './FooterAskAi.astro';
+import FooterPresence from './FooterPresence.astro';
 
 interface Props {
   name: string;
@@ -14,7 +15,10 @@ const year = new Date().getFullYear();
 
 <footer class="footer">
   <div class="footer-bar">
-    <span class="footer-copy mono">© {year} {name}</span>
+    <div class="footer-start">
+      <span class="footer-copy mono">© {year} {name}</span>
+      <FooterPresence />
+    </div>
     <div class="footer-end">
       {
         resumeHref ? (

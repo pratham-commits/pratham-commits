@@ -1,0 +1,86 @@
+---
+
+---
+
+<p class="footer-presence mono" id="footer-presence" hidden aria-live="polite">
+  <span class="footer-presence-online">
+    <span class="footer-presence-dot" aria-hidden="true"></span>
+    <span data-presence-online>—</span> now
+  </span>
+  <span class="footer-presence-sep" aria-hidden="true">·</span>
+  <span><span data-presence-total>—</span> visits</span>
+</p>
+
+<script>
+  const ROOT_ID = 'footer-presence';
+  const SESSION_KEY = 'portfolio-presence-session';
+  const PING_MS = 30_000;
+
+  function getSessionId(): string {
+    let id = sessionStorage.getItem(SESSION_KEY);
+    if (!id) {
+      id = crypto.randomUUID();
+      sessionStorage.setItem(SESSION_KEY, id);
+    }
+    return id;
+  }
+
+  function formatCount(value: number): string {
+    return value.toLocaleString('en-IN');
+  }
+
+  function render(root: HTMLElement, total: number, online: number) {
+    const onlineEl = root.querySelector('[data-presence-online]');
+    const totalEl = root.querySelector('[data-presence-total]');
+    if (onlineEl) onlineEl.textContent = formatCount(online);
+    if (totalEl) totalEl.textContent = formatCount(total);
+    root.hidden = false;
+  }
+
+  async function ping(): Promise<void> {
+    const root = document.getElementById(ROOT_ID);
+    if (!root) return;
+
+    try {
+      const res = await fetch('/api/presence', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sessionId: getSessionId() }),
+        credentials: 'same-origin',
+      });
+      if (!res.ok) return;
+      const data = (await res.json()) as {
+        configured?: boolean;
+        total?: number | null;
+        online?: number | null;
+      };
+      if (
+        !data.configured ||
+        typeof data.total !== 'number' ||
+        typeof data.online !== 'number'
+      ) {
+        return;
+      }
+      render(root, data.total, data.online);
+    } catch {
+      /* ignore: footer stays hidden without KV */
+    }
+  }
+
+  function start() {
+    void ping();
+    window.setInterval(() => {
+      if (document.visibilityState === 'hidden') return;
+      void ping();
+    }, PING_MS);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') void ping();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else {
+    start();
+  }
+</script>

@@ -1,9 +1,10 @@
 // @ts-check
+import vercel from '@astrojs/vercel';
 import { defineConfig, passthroughImageService } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'static',
+  adapter: vercel(),
   // Production URL (canonical, OG, llms.txt, Ask AI).
   site: 'https://prathamshah.in',
   image: {
