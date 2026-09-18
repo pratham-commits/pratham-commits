@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^8.2.11",
-    "@vercel/kv": "^3.0.0",
+    "@upstash/redis": "^1.38.4",
     "astro": "^5.0.0"
   },
   "allowScripts": {
